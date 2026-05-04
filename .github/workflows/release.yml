@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*'
 
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: 0
+  CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
+
 jobs:
   release:
     strategy:
@@ -28,36 +33,31 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-          cache-dependency-path: tauri-app/package-lock.json
+          fetch-depth: 1
+
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.rust-target }}
 
-      - name: Cache Rust build
+      - name: Cache Rust deps
         uses: swatinem/rust-cache@v2
         with:
           workspaces: tauri-app/src-tauri
+          cache-on-failure: true
 
-      - name: Install Linux system dependencies
+      - name: Cache Linux system deps
         if: matrix.platform == 'ubuntu-22.04'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libwebkit2gtk-4.1-dev \
-            libayatana-appindicator3-dev \
-            librsvg2-dev \
-            patchelf
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev patchelf
+          version: 1.0
 
-      - name: Install frontend dependencies
-        run: npm ci
+      - name: Install frontend deps
+        run: bun install
         working-directory: tauri-app
 
       - name: Build and publish release
