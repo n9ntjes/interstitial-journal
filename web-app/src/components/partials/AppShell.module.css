@@ -1,0 +1,104 @@
+.shell {
+  display: grid;
+  grid-template-areas: 'sidenav main';
+  grid-template-columns: var(--ij-sidenav-width) 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.shell.withDetail {
+  grid-template-areas: 'sidenav main detail';
+  grid-template-columns:
+    var(--ij-sidenav-width)
+    1fr
+    var(--ij-shell-detail-width, var(--ij-detail-width));
+}
+
+.main {
+  grid-area: main;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailColumn {
+  grid-area: detail;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+}
+
+.resizeHandle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 40px;
+  background: transparent;
+  color: var(--ij-outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: col-resize;
+  z-index: 2;
+  touch-action: none;
+}
+
+.resizeHandle:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
+}
+
+.resizeHandleGrip {
+  width: 3px;
+  height: 22px;
+  border-radius: var(--ij-radius-pill);
+  background: currentColor;
+  opacity: 0.95;
+}
+
+@media (max-width: 1100px) {
+  .shell.withDetail {
+    /* Keep `detail` in the template: dropping it leaves `grid-area: detail` on
+       auto-placement, which stacks the detail panel over the sidenav and blocks
+       nav clicks (common at laptop widths just under 1100px). */
+    grid-template-areas:
+      'sidenav main'
+      '. detail';
+    grid-template-columns: var(--ij-sidenav-width) 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .detailColumn {
+    width: 100%;
+  }
+
+  .resizeHandle {
+    display: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .shell {
+    grid-template-areas:
+      'sidenav'
+      'main';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .shell.withDetail {
+    grid-template-areas:
+      'sidenav'
+      'main'
+      'detail';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+}

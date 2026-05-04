@@ -1,0 +1,150 @@
+/*
+ * Shared partial utilities — the reusable Honest Glass building blocks.
+ * Import from a CSS Module so the classnames get hashed per consumer,
+ * yet every partial paints identical geometry.
+ *
+ * Usage in a partial:
+ *   import partial from '../../styles/partials.module.css'
+ *   <div className={partial.glassCanvas}>…</div>
+ */
+
+.glassCanvas {
+  background: var(--ij-glass-canvas-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--ij-glass-canvas-border);
+}
+
+.honestGlass {
+  background: var(--ij-honest-glass-bg);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid var(--ij-honest-glass-border);
+  box-shadow: var(--ij-honest-glass-shadow);
+}
+
+.innerGlow {
+  box-shadow: var(--ij-inner-glow);
+}
+
+/* Combined inner glow + honest glass drop shadow for floating elements. */
+.innerGlowHonest {
+  box-shadow:
+    var(--ij-inner-glow),
+    var(--ij-honest-glass-shadow);
+}
+
+.timeLine {
+  width: 0.5px;
+  background: var(--ij-divider);
+}
+
+.scrollbarHide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+.labelCaps {
+  font-family: var(--ij-font-sans);
+  font-size: var(--ij-text-label-caps);
+  line-height: var(--ij-leading-label-caps);
+  letter-spacing: var(--ij-tracking-caps);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.labelCapsWidest {
+  composes: labelCaps;
+  letter-spacing: var(--ij-tracking-widest);
+}
+
+.bodyMd {
+  font-size: var(--ij-text-body-md);
+  line-height: var(--ij-leading-body-md);
+  letter-spacing: var(--ij-tracking-tight-soft);
+}
+
+.bodySm {
+  font-size: var(--ij-text-body-sm);
+  line-height: var(--ij-leading-body-sm);
+}
+
+.monoInput {
+  font-family: var(--ij-font-mono);
+  font-size: var(--ij-text-mono-input);
+  line-height: var(--ij-leading-mono-input);
+}
+
+.displaySm {
+  font-size: var(--ij-text-display-sm);
+  line-height: var(--ij-leading-display-sm);
+  letter-spacing: var(--ij-tracking-tight);
+  font-weight: 600;
+}
+
+/*
+ * Shared icon-button primitive. Use as:
+ *   <button className={partial.iconButton}><span className="material-symbols-outlined">edit</span></button>
+ */
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ij-radius-pill);
+  color: var(--ij-on-surface-variant);
+  transition:
+    background-color var(--ij-duration-sm) var(--ij-ease),
+    color var(--ij-duration-sm) var(--ij-ease),
+    transform var(--ij-duration-sm) var(--ij-ease);
+}
+
+.iconButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ij-on-surface);
+}
+
+.iconButton:active {
+  transform: scale(0.94);
+}
+
+/* A ghost-pill control (search bar, segmented controls, etc.). */
+.ghostPill {
+  display: flex;
+  align-items: center;
+  gap: var(--ij-space-2);
+  padding: 8px 16px 8px 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--ij-radius-pill);
+  color: var(--ij-on-surface);
+  font-size: var(--ij-text-body-sm);
+  line-height: var(--ij-leading-body-sm);
+  transition:
+    background-color var(--ij-duration-sm) var(--ij-ease),
+    border-color var(--ij-duration-sm) var(--ij-ease);
+}
+
+.ghostPill:focus-within,
+.ghostPill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ghostPill input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  color: inherit;
+}
+
+.ghostPill input::placeholder {
+  color: var(--ij-outline);
+}

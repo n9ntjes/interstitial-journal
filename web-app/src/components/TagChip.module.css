@@ -1,0 +1,65 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ij-radius-pill);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--ij-tracking-caps);
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--ij-duration-xs) var(--ij-ease),
+    border-color var(--ij-duration-xs) var(--ij-ease),
+    transform var(--ij-duration-xs) var(--ij-ease);
+  white-space: nowrap;
+}
+
+.chip:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.sm {
+  padding: 4px 10px;
+}
+
+.md {
+  padding: 6px 12px;
+  font-size: 11px;
+}
+
+.blue {
+  background: var(--ij-tag-blue-soft);
+  border-color: var(--ij-tag-blue-line);
+  color: var(--ij-tag-blue);
+}
+.amber {
+  background: var(--ij-tag-amber-soft);
+  border-color: var(--ij-tag-amber-line);
+  color: var(--ij-tag-amber);
+}
+.emerald {
+  background: var(--ij-tag-emerald-soft);
+  border-color: var(--ij-tag-emerald-line);
+  color: var(--ij-tag-emerald);
+}
+.purple {
+  background: var(--ij-tag-purple-soft);
+  border-color: var(--ij-tag-purple-line);
+  color: var(--ij-tag-purple);
+}
+.rose {
+  background: var(--ij-tag-rose-soft);
+  border-color: var(--ij-tag-rose-line);
+  color: var(--ij-tag-rose);
+}
+.cyan {
+  background: var(--ij-tag-cyan-soft);
+  border-color: var(--ij-tag-cyan-line);
+  color: var(--ij-tag-cyan);
+}
+.slate {
+  background: var(--ij-tag-slate-soft);
+  border-color: var(--ij-tag-slate-line);
+  color: var(--ij-tag-slate);
+}

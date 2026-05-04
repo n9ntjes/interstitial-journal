@@ -1,0 +1,40 @@
+.root {
+  flex-shrink: 0;
+}
+
+.sm {
+  width: 28px;
+  height: 28px;
+}
+
+.md {
+  width: 36px;
+  height: 36px;
+}
+
+.lg {
+  width: 44px;
+  height: 44px;
+}
+
+.ghost {
+  /* defaults inherited from partials.module.css .iconButton */
+}
+
+.primary {
+  background: var(--ij-primary);
+  color: var(--ij-on-primary);
+  box-shadow: var(--ij-drop-soft);
+}
+
+.primary:hover {
+  background: var(--ij-primary);
+  color: var(--ij-on-primary);
+  transform: scale(1.05);
+}
+
+.root:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}

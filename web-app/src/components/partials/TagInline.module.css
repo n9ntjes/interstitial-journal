@@ -1,0 +1,36 @@
+/*
+ * Inline tag highlight — colored text inside prose.
+ * Colors match the tag variant ramp in tokens.css.
+ */
+.tag {
+  font-weight: 500;
+  transition: color var(--ij-duration-xs) var(--ij-ease);
+}
+
+.tag:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.blue {
+  color: var(--ij-tag-blue);
+}
+.amber {
+  color: var(--ij-tag-amber);
+}
+.emerald {
+  color: var(--ij-tag-emerald);
+}
+.purple {
+  color: var(--ij-tag-purple);
+}
+.rose {
+  color: var(--ij-tag-rose);
+}
+.cyan {
+  color: var(--ij-tag-cyan);
+}
+.slate {
+  color: var(--ij-tag-slate);
+}

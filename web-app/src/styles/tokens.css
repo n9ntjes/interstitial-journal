@@ -1,0 +1,236 @@
+/*
+ * Interstitial Journal — Design Tokens
+ * Source of truth: Stitch project "Interstitial Journal v2" (id 16554277296517776375),
+ * theme "Honest Glass" (dark, Inter, glassmorphism).
+ *
+ * Consumers should reference semantic tokens (--ij-surface, --ij-on-surface, etc.)
+ * rather than raw hex values. Layout tokens (--ij-space-*, --ij-radius-*) follow
+ * the same 4 px grid as the Stitch design.
+ *
+ * Legacy aliases (--bg-0, --fg-0, --accent, --space-*, --radius-*) are preserved
+ * so existing views and styles continue to render while we migrate.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ==========================================================
+   * Honest Glass — Material-3 style named colors (from Stitch)
+   * ==========================================================
+   */
+  --ij-background: #131313;
+  --ij-on-background: #e5e2e1;
+
+  --ij-surface: #131313;
+  --ij-surface-dim: #131313;
+  --ij-surface-bright: #393939;
+  --ij-surface-container-lowest: #0e0e0e;
+  --ij-surface-container-low: #1c1b1b;
+  --ij-surface-container: #201f1f;
+  --ij-surface-container-high: #2a2a2a;
+  --ij-surface-container-highest: #353534;
+  --ij-surface-variant: #353534;
+  --ij-surface-tint: #c6c6c7;
+
+  --ij-on-surface: #e5e2e1;
+  --ij-on-surface-variant: #c4c7c8;
+
+  --ij-inverse-surface: #e5e2e1;
+  --ij-inverse-on-surface: #313030;
+  --ij-inverse-primary: #5d5f5f;
+
+  --ij-outline: #8e9192;
+  --ij-outline-variant: #444748;
+
+  --ij-primary: #ffffff;
+  --ij-on-primary: #2f3131;
+  --ij-primary-container: #e2e2e2;
+  --ij-on-primary-container: #636565;
+  --ij-primary-fixed: #e2e2e2;
+  --ij-primary-fixed-dim: #c6c6c7;
+
+  --ij-secondary: #ffdb9d;
+  --ij-on-secondary: #412d00;
+  --ij-secondary-container: #feb700;
+  --ij-on-secondary-container: #6b4b00;
+  --ij-secondary-fixed: #ffdea8;
+  --ij-secondary-fixed-dim: #ffba20;
+
+  --ij-tertiary: #ffffff;
+  --ij-on-tertiary: #00315d;
+  --ij-tertiary-container: #d4e3ff;
+  --ij-on-tertiary-container: #0066b6;
+  --ij-tertiary-fixed: #d4e3ff;
+  --ij-tertiary-fixed-dim: #a4c9ff;
+
+  --ij-error: #ffb4ab;
+  --ij-on-error: #690005;
+  --ij-error-container: #93000a;
+  --ij-on-error-container: #ffdad6;
+
+  /* ==========================================================
+   * Glass layer tokens (used by the honest-glass partial & co.)
+   * ==========================================================
+   */
+  --ij-glass-canvas-bg: rgba(255, 255, 255, 0.03);
+  --ij-glass-canvas-border: rgba(255, 255, 255, 0.08);
+  --ij-glass-canvas-hover-bg: rgba(255, 255, 255, 0.05);
+  --ij-glass-canvas-selected-bg: rgba(255, 255, 255, 0.08);
+  --ij-glass-canvas-selected-ring: rgba(255, 255, 255, 0.2);
+
+  --ij-honest-glass-bg: rgba(13, 13, 13, 0.6);
+  --ij-honest-glass-border: rgba(255, 255, 255, 0.1);
+  --ij-honest-glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+
+  --ij-inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  --ij-drop-soft: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --ij-divider: rgba(255, 255, 255, 0.1);
+  --ij-divider-faint: rgba(255, 255, 255, 0.06);
+
+  --ij-nav-bg: rgba(0, 0, 0, 0.1);
+  --ij-appbar-bg: rgba(0, 0, 0, 0.05);
+  --ij-scrim: rgba(19, 19, 19, 0.8);
+
+  /* ==========================================================
+   * Tag accent ramp — used by <TagInline /> and <TagChip />
+   * Keeps per-tag color deterministic across the app.
+   * ==========================================================
+   */
+  --ij-tag-blue: #60a5fa;
+  --ij-tag-blue-soft: rgba(59, 130, 246, 0.1);
+  --ij-tag-blue-line: rgba(59, 130, 246, 0.2);
+
+  --ij-tag-amber: #fbbf24;
+  --ij-tag-amber-soft: rgba(245, 158, 11, 0.1);
+  --ij-tag-amber-line: rgba(245, 158, 11, 0.2);
+
+  --ij-tag-emerald: #34d399;
+  --ij-tag-emerald-soft: rgba(16, 185, 129, 0.1);
+  --ij-tag-emerald-line: rgba(16, 185, 129, 0.2);
+
+  --ij-tag-purple: #c084fc;
+  --ij-tag-purple-soft: rgba(168, 85, 247, 0.1);
+  --ij-tag-purple-line: rgba(168, 85, 247, 0.2);
+
+  --ij-tag-rose: #fb7185;
+  --ij-tag-rose-soft: rgba(244, 63, 94, 0.1);
+  --ij-tag-rose-line: rgba(244, 63, 94, 0.2);
+
+  --ij-tag-cyan: #22d3ee;
+  --ij-tag-cyan-soft: rgba(6, 182, 212, 0.1);
+  --ij-tag-cyan-line: rgba(6, 182, 212, 0.2);
+
+  --ij-tag-slate: #94a3b8;
+  --ij-tag-slate-soft: rgba(148, 163, 184, 0.08);
+  --ij-tag-slate-line: rgba(148, 163, 184, 0.2);
+
+  /* ==========================================================
+   * Typography — Inter + a monospaced composer stack.
+   * Sizes mirror Stitch's named text styles.
+   * ==========================================================
+   */
+  --ij-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    system-ui, sans-serif;
+  --ij-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  --ij-text-display-sm: 20px;
+  --ij-text-body-md: 15px;
+  --ij-text-body-sm: 13px;
+  --ij-text-mono-input: 14px;
+  --ij-text-label-caps: 11px;
+
+  --ij-leading-display-sm: 28px;
+  --ij-leading-body-md: 24px;
+  --ij-leading-body-sm: 20px;
+  --ij-leading-mono-input: 22px;
+  --ij-leading-label-caps: 16px;
+
+  --ij-tracking-tight: -0.01em;
+  --ij-tracking-tight-soft: -0.005em;
+  --ij-tracking-caps: 0.05em;
+  --ij-tracking-widest: 0.18em;
+
+  /* ==========================================================
+   * Spacing — 4 px grid. Keeps parity with Stitch scale names.
+   * ==========================================================
+   */
+  --ij-unit: 4px;
+  --ij-space-1: 4px;
+  --ij-space-2: 8px;
+  --ij-space-3: 12px; /* element-gap */
+  --ij-space-4: 16px;
+  --ij-space-5: 20px; /* stack-space */
+  --ij-space-6: 24px; /* container-padding */
+  --ij-space-8: 32px;
+  --ij-space-10: 40px;
+
+  --ij-content-max: 680px; /* feed column */
+  --ij-sidenav-width: 256px;
+  --ij-detail-width: 320px;
+
+  /* ==========================================================
+   * Radii — rounded-lg/xl from Stitch + a pill helper.
+   * ==========================================================
+   */
+  --ij-radius-sm: 4px;
+  --ij-radius: 8px;
+  --ij-radius-lg: 12px;
+  --ij-radius-xl: 16px;
+  --ij-radius-pill: 9999px;
+
+  /* ==========================================================
+   * Motion — everything slides in at the same tempo.
+   * ==========================================================
+   */
+  --ij-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ij-duration-xs: 120ms;
+  --ij-duration-sm: 200ms;
+  --ij-duration-md: 300ms;
+  --ij-duration-lg: 500ms;
+
+  /* ==========================================================
+   * Legacy aliases — preserved while older screens migrate to
+   * the Honest Glass tokens. DO NOT use these in new code.
+   * ==========================================================
+   */
+  --bg-0: var(--ij-background);
+  --bg-1: var(--ij-surface-container-low);
+  --bg-2: var(--ij-surface-container);
+  --bg-3: var(--ij-surface-container-high);
+  --bg-hover: var(--ij-surface-container-high);
+  --border: var(--ij-glass-canvas-border);
+  --border-strong: var(--ij-divider);
+  --fg-0: var(--ij-on-surface);
+  --fg-1: var(--ij-on-surface-variant);
+  --fg-2: #8b8fa0;
+  --fg-3: #5e6272;
+  --accent: var(--ij-tag-blue);
+  --accent-dim: var(--ij-tag-blue-soft);
+  --danger: var(--ij-error);
+  --warn: var(--ij-secondary-fixed-dim);
+  --ok: var(--ij-tag-emerald);
+
+  --radius-sm: var(--ij-radius-sm);
+  --radius: var(--ij-radius);
+  --radius-lg: var(--ij-radius-lg);
+  --radius-xl: var(--ij-radius-xl);
+
+  --space-1: var(--ij-space-1);
+  --space-2: var(--ij-space-2);
+  --space-3: var(--ij-space-3);
+  --space-4: var(--ij-space-4);
+  --space-5: var(--ij-space-5);
+  --space-6: var(--ij-space-8);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-2: var(--ij-drop-soft);
+
+  --font-mono: var(--ij-font-mono);
+  --font-sans: var(--ij-font-sans);
+
+  --heat-0: rgba(255, 255, 255, 0.04);
+  --heat-1: rgba(122, 165, 255, 0.18);
+  --heat-2: rgba(122, 165, 255, 0.38);
+  --heat-3: rgba(122, 165, 255, 0.6);
+  --heat-4: rgba(122, 165, 255, 0.88);
+}

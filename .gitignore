@@ -1,0 +1,33 @@
+node_modules/
+dist/
+.DS_Store
+.derivedData/
+
+# web-app / tauri-app build output
+**/dist/
+**/.vite/
+
+# tauri rust build output
+tauri-app/src-tauri/target/
+tauri-app/src-tauri/gen/
+
+# env
+.env
+.env.local
+*.local
+
+# api runtime data (keep schema SQL)
+api/data/uploads/
+api/data/installers/
+api/data/*.sqlite
+api/config.php
+api/config.local.php
+
+# editor
+.vscode/
+.idea/
+.cursor/mcp.json
+
+# Claude Code internals
+.tmp/
+.agents/

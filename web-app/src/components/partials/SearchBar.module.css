@@ -1,0 +1,18 @@
+.bar {
+  width: 100%;
+  position: relative;
+  padding-left: 44px;
+}
+
+.icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ij-outline);
+  transition: color var(--ij-duration-sm) var(--ij-ease);
+}
+
+.bar:focus-within .icon {
+  color: var(--ij-on-surface-variant);
+}

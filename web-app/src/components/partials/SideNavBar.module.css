@@ -1,0 +1,225 @@
+.rail {
+  grid-area: sidenav;
+  display: flex;
+  flex-direction: column;
+  width: var(--ij-sidenav-width);
+  padding: var(--ij-space-4);
+  gap: var(--ij-space-5);
+  background: var(--ij-nav-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-right: 1px solid var(--ij-divider);
+  overflow: hidden;
+  font-family: var(--ij-font-sans);
+  font-weight: 300;
+  font-size: var(--ij-text-body-sm);
+  color: var(--ij-on-surface-variant);
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  gap: var(--ij-space-3);
+  padding: 0 var(--ij-space-2);
+  margin-top: var(--ij-space-2);
+}
+
+.brandIcon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+
+.brandText {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.05;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: var(--ij-tracking-widest);
+  text-transform: uppercase;
+  color: var(--ij-on-surface);
+}
+
+.brandWord {
+  display: block;
+}
+
+.nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ij-space-2);
+  padding-right: var(--ij-space-1);
+}
+
+.group,
+.tagList,
+.footer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.groupTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--ij-space-5) var(--ij-space-3) var(--ij-space-2);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--ij-tracking-widest);
+  text-transform: uppercase;
+  color: var(--ij-outline);
+}
+
+.groupCount {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ij-outline-variant);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--ij-space-3);
+  padding: 8px var(--ij-space-3);
+  border-radius: var(--ij-radius);
+  color: var(--ij-outline);
+  transition:
+    background-color var(--ij-duration-sm) var(--ij-ease),
+    color var(--ij-duration-sm) var(--ij-ease);
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ij-on-surface-variant);
+}
+
+.linkActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ij-on-surface);
+}
+
+.tagLink {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
+  gap: var(--ij-space-3);
+  padding: 6px var(--ij-space-3);
+  border-radius: var(--ij-radius);
+  color: var(--ij-outline);
+  transition:
+    background-color var(--ij-duration-sm) var(--ij-ease),
+    color var(--ij-duration-sm) var(--ij-ease);
+}
+
+.tagLink:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ij-on-surface-variant);
+}
+
+.tagLinkActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ij-on-surface);
+}
+
+.tagDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.tagLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tagCount {
+  font-family: var(--ij-font-mono);
+  font-size: 10px;
+  color: var(--ij-outline-variant);
+}
+
+.empty {
+  padding: var(--ij-space-2) var(--ij-space-3);
+  font-style: italic;
+  color: var(--ij-outline-variant);
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: var(--ij-space-2);
+  border-top: 1px solid var(--ij-divider-faint);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: var(--ij-space-3);
+  padding: 8px var(--ij-space-3);
+  margin-top: var(--ij-space-2);
+  border-top: 1px solid var(--ij-divider-faint);
+}
+
+.accountText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.accountName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ij-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.accountEmail {
+  font-size: 10px;
+  color: var(--ij-outline-variant);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--ij-divider);
+  color: var(--ij-outline);
+  padding: 4px 8px;
+  border-radius: var(--ij-radius);
+  font-size: 11px;
+  cursor: pointer;
+  transition:
+    background-color var(--ij-duration-sm) var(--ij-ease),
+    color var(--ij-duration-sm) var(--ij-ease);
+}
+
+.logout:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ij-on-surface);
+}

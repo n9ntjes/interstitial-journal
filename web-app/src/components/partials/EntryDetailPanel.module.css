@@ -1,0 +1,128 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  background: var(--ij-nav-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-left: 1px solid var(--ij-divider);
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ij-space-6);
+  border-bottom: 1px solid var(--ij-divider);
+  gap: var(--ij-space-2);
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: var(--ij-text-body-md);
+  font-weight: 600;
+  color: var(--ij-on-surface);
+}
+
+.headerActions {
+  display: flex;
+  gap: 2px;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--ij-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ij-space-6);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ij-space-2);
+}
+
+.metaDate {
+  color: var(--ij-outline);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--ij-text-display-sm);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ij-on-surface);
+  letter-spacing: var(--ij-tracking-tight);
+}
+
+.content {
+  color: var(--ij-on-surface);
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.editor {
+  width: 100%;
+  min-height: 200px;
+  background: var(--ij-surface-container-low);
+  border: 1px solid var(--ij-divider);
+  border-radius: var(--ij-radius-lg);
+  padding: var(--ij-space-4);
+  color: var(--ij-on-surface);
+  resize: vertical;
+}
+
+.editor:focus-visible {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.imageBlock {
+  min-width: 0;
+}
+
+.chips {
+  display: flex;
+  gap: var(--ij-space-2);
+  flex-wrap: wrap;
+  padding-top: var(--ij-space-2);
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ij-space-8);
+  text-align: center;
+  color: var(--ij-outline);
+  gap: var(--ij-space-3);
+  opacity: 0.7;
+}
+
+.empty p {
+  margin: 0;
+  font-size: var(--ij-text-body-sm);
+}
+
+.empty h3 {
+  margin: 0;
+  font-size: var(--ij-text-body-md);
+  color: var(--ij-on-surface-variant);
+}
+
+.error {
+  padding: var(--ij-space-2) var(--ij-space-3);
+  border-radius: var(--ij-radius);
+  font-size: 12px;
+  color: var(--ij-error);
+  background: rgba(255, 180, 171, 0.08);
+  border: 1px solid rgba(255, 180, 171, 0.25);
+}

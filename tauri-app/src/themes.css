@@ -1,0 +1,333 @@
+/*
+ * Theme tokens.
+ *
+ * Every surface in App.css and LiveFeed.css consumes these custom properties. Defaults
+ * here are the `glass-dark` look (ships as the out-of-the-box theme for both the
+ * pop-up and the live feed). Selecting a different theme in the tray writes the id
+ * to `data-theme` on <html>; the blocks below override only the tokens that differ.
+ */
+
+:root {
+  /* Shared */
+  --font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'SF Pro Text',
+    'Inter',
+    system-ui,
+    sans-serif;
+  --font-family-mono:
+    ui-monospace,
+    'SF Mono',
+    'JetBrains Mono',
+    Menlo,
+    monospace;
+  --font-family-serif:
+    'New York',
+    'Iowan Old Style',
+    'Palatino',
+    Georgia,
+    serif;
+
+  /* Pop-up shell */
+  --pill-radius: 999px;
+  --pill-bg: rgba(22, 22, 28, 0.55);
+  --pill-backdrop: blur(40px) saturate(180%);
+  --pill-border: 0.5px solid rgba(255, 255, 255, 0.18);
+  --pill-border-focus: 0.5px solid rgba(255, 255, 255, 0.32);
+  --pill-shadow:
+    0 30px 52px rgba(0, 0, 0, 0.45),
+    0 10px 22px rgba(0, 0, 0, 0.35),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.08);
+  --pill-text: rgba(255, 255, 255, 0.94);
+  --pill-placeholder: rgba(255, 255, 255, 0.45);
+  --pill-caret: rgba(255, 255, 255, 0.9);
+  --pill-font-family: var(--font-family);
+
+  /* Thumbnails */
+  --thumb-radius: 12px;
+  --thumb-bg: rgba(0, 0, 0, 0.35);
+  --thumb-border: 0.5px solid rgba(255, 255, 255, 0.2);
+  --thumb-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.42),
+    0 0 0 0.5px rgba(255, 255, 255, 0.06) inset;
+  --thumb-remove-bg: rgba(0, 0, 0, 0.65);
+  --thumb-remove-bg-hover: rgba(0, 0, 0, 0.85);
+  --thumb-remove-text: rgba(255, 255, 255, 0.92);
+
+  /* Hotkey strip */
+  --hotkey-text: rgba(255, 255, 255, 0.52);
+  --hotkey-caption: rgba(255, 255, 255, 0.45);
+  --hotkey-dot: rgba(255, 255, 255, 0.28);
+  --hotkey-error: #ff8a8a;
+  --hotkey-glyph: rgba(255, 255, 255, 0.88);
+
+  --keycap-radius: 7px;
+  --keycap-bg: rgba(255, 255, 255, 0.09);
+  --keycap-border: 0.5px solid rgba(255, 255, 255, 0.14);
+  --keycap-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  --keycap-text: rgba(255, 255, 255, 0.9);
+
+  /* Live feed */
+  --lf-font-family: var(--font-family);
+  --lf-time-font-family: var(--font-family-mono);
+  --lf-row-weight: 500;
+  --lf-time-weight: 600;
+  --lf-time: rgba(255, 255, 255, 0.44);
+  --lf-time-shadow:
+    0 0 10px rgba(0, 0, 0, 0.42),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  --lf-sep: rgba(255, 255, 255, 0.22);
+  --lf-sep-shadow:
+    0 0 8px rgba(0, 0, 0, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  --lf-text: rgba(255, 255, 255, 0.86);
+  --lf-text-shadow:
+    0 0 12px rgba(0, 0, 0, 0.46),
+    0 1px 2px rgba(0, 0, 0, 0.28);
+  --lf-empty: rgba(255, 255, 255, 0.44);
+  --lf-empty-shadow:
+    0 0 10px rgba(0, 0, 0, 0.38),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+  --lf-drag-handle: rgba(255, 255, 255, 0.18);
+  --lf-drag-handle-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+}
+
+/* Honest Glass — Light
+ * Frosted white pill; for the live feed we keep dark ink but add a bright halo
+ * shadow so rows stay legible on dark wallpapers. */
+:root[data-theme='glass-light'] {
+  --pill-bg: rgba(248, 248, 250, 0.72);
+  --pill-backdrop: blur(32px) saturate(180%);
+  --pill-border: 0.5px solid rgba(20, 22, 30, 0.1);
+  --pill-border-focus: 0.5px solid rgba(20, 22, 30, 0.24);
+  --pill-shadow:
+    0 30px 52px rgba(20, 30, 60, 0.22),
+    0 10px 22px rgba(20, 30, 60, 0.16),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.9);
+  --pill-text: rgba(20, 22, 30, 0.92);
+  --pill-placeholder: rgba(20, 22, 30, 0.42);
+  --pill-caret: rgba(20, 22, 30, 0.8);
+
+  --thumb-bg: rgba(255, 255, 255, 0.6);
+  --thumb-border: 0.5px solid rgba(20, 22, 30, 0.14);
+  --thumb-shadow:
+    0 12px 28px rgba(20, 30, 60, 0.2),
+    0 0 0 0.5px rgba(20, 22, 30, 0.04) inset;
+  --thumb-remove-bg: rgba(255, 255, 255, 0.85);
+  --thumb-remove-bg-hover: rgba(255, 255, 255, 1);
+  --thumb-remove-text: rgba(20, 22, 30, 0.9);
+
+  --hotkey-text: rgba(20, 22, 30, 0.6);
+  --hotkey-caption: rgba(20, 22, 30, 0.5);
+  --hotkey-dot: rgba(20, 22, 30, 0.3);
+  --hotkey-error: #c0323c;
+  --hotkey-glyph: rgba(20, 22, 30, 0.82);
+
+  --keycap-bg: rgba(20, 22, 30, 0.06);
+  --keycap-border: 0.5px solid rgba(20, 22, 30, 0.14);
+  --keycap-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  --keycap-text: rgba(20, 22, 30, 0.88);
+
+  --lf-time: rgba(20, 22, 30, 0.58);
+  --lf-time-shadow:
+    0 0 10px rgba(255, 255, 255, 0.7),
+    0 1px 2px rgba(255, 255, 255, 0.45);
+  --lf-sep: rgba(20, 22, 30, 0.28);
+  --lf-sep-shadow:
+    0 0 6px rgba(255, 255, 255, 0.55),
+    0 1px 2px rgba(255, 255, 255, 0.35);
+  --lf-text: rgba(20, 22, 30, 0.9);
+  --lf-text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.72),
+    0 1px 2px rgba(255, 255, 255, 0.5);
+  --lf-empty: rgba(20, 22, 30, 0.52);
+  --lf-empty-shadow:
+    0 0 10px rgba(255, 255, 255, 0.62),
+    0 1px 2px rgba(255, 255, 255, 0.4);
+  --lf-drag-handle: rgba(20, 22, 30, 0.22);
+  --lf-drag-handle-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.6);
+}
+
+/* Mono Terminal — amber/green phosphor on deep black, monospace, square edges.
+ * Backdrop blur is disabled so the surface stays opaque and CRT-like. */
+:root[data-theme='mono-terminal'] {
+  --pill-radius: 6px;
+  --pill-bg: rgba(4, 10, 6, 0.92);
+  --pill-backdrop: none;
+  --pill-border: 1px solid rgba(90, 255, 170, 0.55);
+  --pill-border-focus: 1px solid rgba(140, 255, 190, 0.9);
+  --pill-shadow:
+    0 0 0 1px rgba(90, 255, 170, 0.1),
+    0 18px 36px rgba(0, 0, 0, 0.6),
+    inset 0 0 30px rgba(90, 255, 170, 0.08);
+  --pill-text: rgba(190, 255, 210, 0.96);
+  --pill-placeholder: rgba(130, 230, 170, 0.42);
+  --pill-caret: rgba(140, 255, 180, 0.95);
+  --pill-font-family: var(--font-family-mono);
+
+  --thumb-radius: 4px;
+  --thumb-bg: rgba(4, 10, 6, 0.88);
+  --thumb-border: 1px solid rgba(90, 255, 170, 0.42);
+  --thumb-shadow:
+    0 0 0 1px rgba(90, 255, 170, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.62);
+  --thumb-remove-bg: rgba(0, 0, 0, 0.8);
+  --thumb-remove-bg-hover: rgba(20, 60, 30, 0.95);
+  --thumb-remove-text: rgba(170, 255, 200, 0.95);
+
+  --hotkey-text: rgba(140, 255, 180, 0.72);
+  --hotkey-caption: rgba(140, 255, 180, 0.6);
+  --hotkey-dot: rgba(140, 255, 180, 0.32);
+  --hotkey-error: #ff7285;
+  --hotkey-glyph: rgba(190, 255, 210, 0.9);
+
+  --keycap-radius: 3px;
+  --keycap-bg: rgba(0, 50, 20, 0.55);
+  --keycap-border: 1px solid rgba(90, 255, 170, 0.45);
+  --keycap-shadow: 0 0 8px rgba(90, 255, 170, 0.18);
+  --keycap-text: rgba(190, 255, 210, 0.95);
+
+  --lf-font-family: var(--font-family-mono);
+  --lf-time-font-family: var(--font-family-mono);
+  --lf-time: rgba(140, 255, 180, 0.78);
+  --lf-time-shadow:
+    0 0 6px rgba(90, 255, 170, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.6);
+  --lf-sep: rgba(140, 255, 180, 0.4);
+  --lf-sep-shadow:
+    0 0 4px rgba(90, 255, 170, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+  --lf-text: rgba(200, 255, 210, 0.94);
+  --lf-text-shadow:
+    0 0 6px rgba(90, 255, 170, 0.28),
+    0 1px 2px rgba(0, 0, 0, 0.6);
+  --lf-empty: rgba(140, 255, 180, 0.56);
+  --lf-empty-shadow:
+    0 0 5px rgba(90, 255, 170, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.4);
+  --lf-drag-handle: rgba(140, 255, 180, 0.42);
+  --lf-drag-handle-shadow: 0 0 6px rgba(90, 255, 170, 0.2);
+}
+
+/* Paper — warm cream stationery, ink serif. Subtle rounding, no blur. */
+:root[data-theme='paper'] {
+  --pill-radius: 16px;
+  --pill-bg: rgba(250, 243, 226, 0.96);
+  --pill-backdrop: none;
+  --pill-border: 0.5px solid rgba(80, 48, 20, 0.22);
+  --pill-border-focus: 0.5px solid rgba(80, 48, 20, 0.42);
+  --pill-shadow:
+    0 24px 44px rgba(80, 48, 20, 0.2),
+    0 8px 18px rgba(80, 48, 20, 0.14),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.8);
+  --pill-text: rgba(44, 30, 12, 0.92);
+  --pill-placeholder: rgba(100, 70, 30, 0.42);
+  --pill-caret: rgba(44, 30, 12, 0.82);
+  --pill-font-family: var(--font-family-serif);
+
+  --thumb-radius: 10px;
+  --thumb-bg: rgba(250, 243, 226, 0.85);
+  --thumb-border: 0.5px solid rgba(80, 48, 20, 0.22);
+  --thumb-shadow:
+    0 12px 24px rgba(80, 48, 20, 0.18),
+    0 0 0 0.5px rgba(80, 48, 20, 0.05) inset;
+  --thumb-remove-bg: rgba(250, 243, 226, 0.95);
+  --thumb-remove-bg-hover: rgba(234, 224, 196, 1);
+  --thumb-remove-text: rgba(44, 30, 12, 0.9);
+
+  --hotkey-text: rgba(80, 48, 20, 0.64);
+  --hotkey-caption: rgba(80, 48, 20, 0.52);
+  --hotkey-dot: rgba(80, 48, 20, 0.28);
+  --hotkey-error: #a8443c;
+  --hotkey-glyph: rgba(44, 30, 12, 0.82);
+
+  --keycap-radius: 6px;
+  --keycap-bg: rgba(80, 48, 20, 0.08);
+  --keycap-border: 0.5px solid rgba(80, 48, 20, 0.22);
+  --keycap-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  --keycap-text: rgba(44, 30, 12, 0.86);
+
+  --lf-font-family: var(--font-family-serif);
+  --lf-time-font-family: var(--font-family-serif);
+  --lf-row-weight: 500;
+  --lf-time-weight: 600;
+  --lf-time: rgba(44, 30, 12, 0.64);
+  --lf-time-shadow:
+    0 0 10px rgba(250, 243, 226, 0.72),
+    0 1px 2px rgba(250, 243, 226, 0.5);
+  --lf-sep: rgba(44, 30, 12, 0.32);
+  --lf-sep-shadow:
+    0 0 6px rgba(250, 243, 226, 0.55),
+    0 1px 2px rgba(250, 243, 226, 0.35);
+  --lf-text: rgba(44, 30, 12, 0.92);
+  --lf-text-shadow:
+    0 0 12px rgba(250, 243, 226, 0.72),
+    0 1px 2px rgba(250, 243, 226, 0.5);
+  --lf-empty: rgba(44, 30, 12, 0.5);
+  --lf-empty-shadow:
+    0 0 10px rgba(250, 243, 226, 0.6),
+    0 1px 2px rgba(250, 243, 226, 0.4);
+  --lf-drag-handle: rgba(44, 30, 12, 0.28);
+  --lf-drag-handle-shadow: 0 0 0 0.5px rgba(250, 243, 226, 0.65);
+}
+
+/* Neon — midnight purple, hot pink + electric cyan. Punchy box shadows, kept
+ * readable by pairing bright accents with a dark translucent pill. */
+:root[data-theme='neon'] {
+  --pill-radius: 999px;
+  --pill-bg: rgba(14, 8, 28, 0.72);
+  --pill-backdrop: blur(30px) saturate(220%);
+  --pill-border: 1px solid rgba(255, 80, 200, 0.55);
+  --pill-border-focus: 1px solid rgba(120, 220, 255, 0.9);
+  --pill-shadow:
+    0 0 28px rgba(255, 80, 200, 0.32),
+    0 0 46px rgba(120, 220, 255, 0.2),
+    0 24px 44px rgba(0, 0, 0, 0.6),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.08);
+  --pill-text: rgba(240, 230, 255, 0.96);
+  --pill-placeholder: rgba(200, 180, 230, 0.48);
+  --pill-caret: rgba(120, 220, 255, 0.95);
+
+  --thumb-radius: 14px;
+  --thumb-bg: rgba(14, 8, 28, 0.7);
+  --thumb-border: 1px solid rgba(255, 80, 200, 0.42);
+  --thumb-shadow:
+    0 0 16px rgba(255, 80, 200, 0.28),
+    0 10px 22px rgba(0, 0, 0, 0.6);
+  --thumb-remove-bg: rgba(14, 8, 28, 0.85);
+  --thumb-remove-bg-hover: rgba(60, 10, 70, 0.95);
+  --thumb-remove-text: rgba(255, 200, 240, 0.95);
+
+  --hotkey-text: rgba(210, 180, 240, 0.72);
+  --hotkey-caption: rgba(210, 180, 240, 0.6);
+  --hotkey-dot: rgba(255, 80, 200, 0.42);
+  --hotkey-error: #ff7aa0;
+  --hotkey-glyph: rgba(240, 230, 255, 0.92);
+
+  --keycap-radius: 8px;
+  --keycap-bg: rgba(50, 20, 80, 0.55);
+  --keycap-border: 1px solid rgba(255, 80, 200, 0.48);
+  --keycap-shadow: 0 0 10px rgba(255, 80, 200, 0.32);
+  --keycap-text: rgba(240, 230, 255, 0.96);
+
+  --lf-time: rgba(120, 220, 255, 0.82);
+  --lf-time-shadow:
+    0 0 10px rgba(120, 220, 255, 0.52),
+    0 1px 2px rgba(0, 0, 0, 0.6);
+  --lf-sep: rgba(255, 80, 200, 0.5);
+  --lf-sep-shadow:
+    0 0 8px rgba(255, 80, 200, 0.5),
+    0 1px 2px rgba(0, 0, 0, 0.4);
+  --lf-text: rgba(240, 230, 255, 0.94);
+  --lf-text-shadow:
+    0 0 12px rgba(255, 80, 200, 0.4),
+    0 0 8px rgba(120, 220, 255, 0.24),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+  --lf-empty: rgba(210, 180, 240, 0.62);
+  --lf-empty-shadow:
+    0 0 8px rgba(255, 80, 200, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.4);
+  --lf-drag-handle: rgba(255, 80, 200, 0.48);
+  --lf-drag-handle-shadow: 0 0 8px rgba(255, 80, 200, 0.32);
+}

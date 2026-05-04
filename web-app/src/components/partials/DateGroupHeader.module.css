@@ -1,0 +1,21 @@
+.wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--ij-space-4) var(--ij-space-4);
+  margin: 0 calc(-1 * var(--ij-space-4));
+  background: transparent;
+}
+
+.label {
+  color: var(--ij-outline);
+}
+
+.count {
+  font-family: var(--ij-font-mono);
+  font-size: 10px;
+  color: var(--ij-outline-variant);
+}

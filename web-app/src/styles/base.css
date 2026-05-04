@@ -1,0 +1,127 @@
+/*
+ * Base layer — resets, typography, body backdrop, scrollbars, icons.
+ * Pulled into main.tsx so every view gets the Honest Glass backdrop
+ * without repeating boilerplate.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--ij-background);
+  color: var(--ij-on-surface);
+  font-family: var(--ij-font-sans);
+  font-size: var(--ij-text-body-md);
+  line-height: var(--ij-leading-body-md);
+  letter-spacing: var(--ij-tracking-tight-soft);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+/* Soft radial backdrop behind every route; matches the Stitch mock.
+ * Sits behind the shell so partials can layer glass on top cleanly. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at top right,
+    var(--ij-surface-container-high),
+    var(--ij-background) 55%,
+    var(--ij-background)
+  );
+  pointer-events: none;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--ij-on-surface);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role='button']:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+textarea {
+  field-sizing: content;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ij-divider);
+  border-radius: var(--ij-radius);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Material Symbols icon helper. The font is loaded in index.html and
+ * exposed via the `.material-symbols-outlined` class the way the
+ * Stitch mock expects.
+ */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+  user-select: none;
+}

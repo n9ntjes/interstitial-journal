@@ -1,0 +1,236 @@
+.view {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  margin: 0 0 var(--space-2);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin: 0;
+  color: var(--fg-2);
+  font-size: 14px;
+  max-width: 60ch;
+  line-height: 1.55;
+}
+
+/* ── Two-step layout ── */
+
+.step {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.stepBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.stepTitle {
+  margin: 0 0 var(--space-1);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--fg-0);
+}
+
+.stepSub {
+  margin: 0 0 var(--space-3);
+  font-size: 13.5px;
+  color: var(--fg-2);
+  line-height: 1.5;
+}
+
+.divider {
+  width: 2px;
+  height: var(--space-5);
+  background: var(--border);
+  margin: var(--space-3) 0 var(--space-3) 13px;
+}
+
+/* ── Install buttons ── */
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 18%, transparent),
+    color-mix(in srgb, var(--accent) 8%, transparent)
+  );
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--fg-0);
+  text-decoration: none;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.download:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.downloadLabel {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.downloadHint {
+  font-size: 11.5px;
+  color: var(--fg-3);
+}
+
+.otherTitle {
+  margin: 0 0 var(--space-2);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-3);
+  font-weight: 600;
+}
+
+.others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.other:hover {
+  text-decoration: none;
+  background: var(--bg-2);
+  border-color: var(--border-strong);
+  color: var(--fg-0);
+}
+
+.otherLabel {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.otherHint {
+  font-size: 11px;
+  color: var(--fg-3);
+}
+
+/* ── Connect button ── */
+
+.connect {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px var(--space-4);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.connect:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.connect:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.launched {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 14px;
+  color: var(--fg-1);
+  padding: 10px 0;
+}
+
+.launchedIcon {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.retryBtn {
+  margin-left: var(--space-2);
+  background: none;
+  border: none;
+  color: var(--fg-3);
+  font-size: 12.5px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.retryBtn:hover {
+  color: var(--fg-1);
+}
+
+.connectError {
+  margin: var(--space-2) 0 0;
+  font-size: 13px;
+  color: var(--danger, #e44);
+}
+
+/* ── Footer note ── */
+
+.note {
+  margin: var(--space-5) 0 0;
+  color: var(--fg-3);
+  font-size: 12px;
+  line-height: 1.5;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+}
