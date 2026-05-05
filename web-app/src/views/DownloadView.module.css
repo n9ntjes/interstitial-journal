@@ -23,6 +23,19 @@
   line-height: 1.55;
 }
 
+.version {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 2px 7px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
 /* ── Two-step layout ── */
 
 .step {
@@ -114,6 +127,11 @@
 .downloadHint {
   font-size: 11.5px;
   color: var(--fg-3);
+}
+
+.downloadUnavailable {
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .otherTitle {
